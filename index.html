@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text stoke animation</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+CU:wght@100..400&display=swap');    *{
+        box-sizing: border-box;
+        font-family: "Playwrite CU", cursive;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+        gap: 10px;
+    }
+    .text{
+        font-size: 70px;
+        color: rgb(84, 84, 84);
+        display: inline-block;
+        -webkit-text-stroke-width: 0px;
+        position: relative;
+    }
+    .text::before{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: attr(data-leters);
+        overflow: hidden;
+    }
+    /* ------------------------------------- */
+    .text.top:before{
+        color: #fc427b;
+        transition: 1s ease-in-out;
+        height: 0;
+        z-index: 1;
+    }
+    .text.top:hover:before{
+        height: 100%;
+    }
+    /* ------------------------------------ */
+    .text.bottom{
+        color: #fc427b;
+    }
+    .text.bottom:before{
+        color: rgb(84, 84, 84);
+        transition: 1s ease-in-out;
+        height: 100%;
+        z-index: 1;
+    }
+    .text.bottom:hover:before{
+        height: 0;
+    }
+    /* -------------------------------------- */
+    .text.left:before{
+        color: #fc427b;
+        transition: 1s ease-in-out;
+        width: 0;
+        z-index: 1;
+    }
+    .text.left:hover:before{
+        width: 100%;
+    }
+    
+    /* --------------------------------------- */
+    .text.right{
+        color: #fc427b;
+    }
+    .text.right:before{
+        color: rgb(84, 84, 84);
+        transition: 1s ease-in-out;
+        width: 100%;
+        z-index: 1;
+    }
+    .text.right:hover:before{
+        width: 0;
+    }
+    
+</style>
+<body>
+    <h1 class="text top" data-leters="irshadchinkaarath">irshadchinkaarath</h1>
+    <h1 class="text bottom" data-leters="irshadchinkaarath">irshadchinkaarath</h1>
+    <h1 class="text left" data-leters="irshadchinkaarath">irshadchinkaarath</h1>
+    <h1 class="text right" data-leters="irshadchinkaarath">irshadchinkaarath</h1>
+</body>
+</html>
